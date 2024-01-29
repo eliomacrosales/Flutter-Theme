@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:theme_extensions/theme/resources/colors/dark_colors.dart';
+import 'package:theme_extensions/theme/resources/colors_palette/dark_colors.dart';
 import 'package:theme_extensions/theme/resources/extensions/app_colors_extension.dart';
 import 'package:theme_extensions/theme/resources/extensions/app_text_theme_extension.dart';
 import 'package:theme_extensions/theme/resources/typography/app_typography.dart';

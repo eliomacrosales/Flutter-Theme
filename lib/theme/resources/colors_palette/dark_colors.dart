@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:theme_extensions/theme/resources/colors_palette/grey/grey_colors.dart';
+import 'package:theme_extensions/theme/resources/colors_palette/red/red_colors.dart';
 
 abstract class DarkColors {
   /// colores personalizados para el tema oscuro
@@ -14,4 +16,7 @@ abstract class DarkColors {
   static const surface = Color(0xff121212);
   static const onSurface = Color(0xfffbfafa);
   static const onReadyBacLatam = Color(0xfff8d31f);
+
+  static const grey = GreyColors();
+  static const red = RedColors();
 }
