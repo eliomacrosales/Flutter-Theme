@@ -31,6 +31,6 @@ class LightTheme{
 
   static final lightTextTheme = AppTextThemeExtension(
     body1: AppTypography.body1.copyWith(color: lightAppColors.onReadyBacLatam),
-    h1: AppTypography.h1.copyWith(color: Colors.black),
+    h1: AppTypography.h1.copyWith(color: lightAppColors.onBackground),
   );
 }

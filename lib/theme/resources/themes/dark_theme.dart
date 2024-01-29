@@ -11,7 +11,7 @@ class DarkTheme{
     return defaultTheme.copyWith(
       textTheme: defaultTheme.textTheme.copyWith(
         /// customizar las tipografias de los textos por default
-        bodyMedium: AppTypography.body1.copyWith(color: Colors.white),
+        bodyMedium: AppTypography.body1.copyWith(color: darkAppColors.onBackground),
       ),
       extensions: [
         darkAppColors,
@@ -36,6 +36,6 @@ class DarkTheme{
 
   static final darkTextTheme = AppTextThemeExtension(
     body1: AppTypography.body1.copyWith(color: darkAppColors.onReadyBacLatam),
-    h1: AppTypography.h1.copyWith(color: Colors.white),
+    h1: AppTypography.h1.copyWith(color: darkAppColors.onBackground),
   );
 }
