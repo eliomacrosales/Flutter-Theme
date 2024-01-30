@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:theme_extensions/theme/resources/extensions/app_colors_extension.dart';
-import 'package:theme_extensions/theme/resources/extensions/app_text_theme_extension.dart';
-import 'package:theme_extensions/theme/resources/themes/light_theme.dart';
+import 'package:theme_extensions/config/theme/extensions/app_colors_extension.dart';
+import 'package:theme_extensions/config/theme/themes/app_theme.dart';
 
 /// Here you should define getters for your `ThemeExtension`s.
 ///
@@ -12,10 +11,7 @@ import 'package:theme_extensions/theme/resources/themes/light_theme.dart';
 /// Usage example: `Theme.of(context).appColors`.
 extension AppThemeExtension on ThemeData {
   AppColorsExtension get appColors =>
-      extension<AppColorsExtension>() ?? LightTheme.lightAppColors;
-
-  AppTextThemeExtension get appTextTheme =>
-      extension<AppTextThemeExtension>() ?? LightTheme.lightTextTheme;
+      extension<AppColorsExtension>() ?? AppTheme.lightAppColors;
 }
 
 /// A more convenient way to get `ThemeData` from the `BuildContext`.

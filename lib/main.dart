@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:theme_extensions/theme/app_theme.dart';
-import 'package:theme_extensions/theme/resources/extensions/app_theme_extension.dart';
-import 'package:theme_extensions/theme/resources/typography/app_typography.dart';
+import 'package:theme_extensions/config/theme/app_theme_provider.dart';
+import 'package:theme_extensions/config/theme/extensions/app_theme_extension.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,16 +13,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(
-      // 1. Provide AppTheme above the MaterialApp, so it will be available on all pages.
-      create: (_) => AppTheme(),
+      create: (_) => AppThemeProvider(),
       builder: (context, _) => MaterialApp(
         title: 'Flutter Demo',
-        // 2. Provide light theme.
-        theme: AppTheme.light,
-        // 3. Provide dark theme.
-        darkTheme: AppTheme.dark,
-        // 4. Watch AppTheme changes (ThemeMode).
-        themeMode: context.watch<AppTheme>().themeMode,
+        theme: AppThemeProvider.light,
+        darkTheme: AppThemeProvider.dark,
+        themeMode: context.watch<AppThemeProvider>().themeMode,
         debugShowCheckedModeBanner: false,
         home: const MyHomePage(title: 'Flutter Demo Home Page'),
       ),
@@ -50,39 +45,32 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   void updateThemeMode(ThemeMode themeMode) {
-    // 5. Update ThemeMode.
-    context.read<AppTheme>().themeMode = themeMode;
+    context.read<AppThemeProvider>().themeMode = themeMode;
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: context.theme.appColors.primary,
+        backgroundColor: context.theme.appColors.primary20,
         title: Text(widget.title),
       ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Text(
+            const Text(
               'You have pushed the button this many times:',
-              // Usage of custom typography with text theme extension.
-              style: context.theme.appTextTheme.body1,
             ),
-            Text(
-              '$_counter',
-              // Usage of custom typography without text theme extension.
-              style: AppTypography.h1.copyWith(
-                color: context.theme.appColors.primary,
-              ),
-            ),
+            Text('$_counter'),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 TextButton(
                   onPressed: () => updateThemeMode(ThemeMode.light),
-                  child: const Text('Light'),
+                  child: Text('Light',
+                      style:
+                          TextStyle(color: context.theme.appColors.primary20)),
                 ),
                 TextButton(
                   onPressed: () => updateThemeMode(ThemeMode.dark),
@@ -100,8 +88,8 @@ class _MyHomePageState extends State<MyHomePage> {
       floatingActionButton: FloatingActionButton(
         onPressed: _incrementCounter,
         tooltip: 'Increment',
-        backgroundColor: context.theme.appColors.primary,
-        foregroundColor: context.theme.appColors.onPrimary,
+        backgroundColor: context.theme.appColors.primary20,
+        foregroundColor: context.theme.appColors.primary20,
         child: const Icon(Icons.add),
       ),
     );
