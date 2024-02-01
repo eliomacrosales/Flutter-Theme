@@ -9,10 +9,13 @@ class AppTheme {
     final lightTheme = ThemeData.light();
     return lightTheme.copyWith(
         colorScheme: const ColorScheme.light(
-            primary: Colors.green, onBackground: Colors.green),
+            primary: Colors.green,
+            onBackground: Colors.green,
+          surface:  Colors.green,
+        ),
         extensions: [lightAppColors],
         textTheme:
-            _buildTextTheme(lightTheme.textTheme, AppLightColors.neutral20));
+            _buildTextTheme(lightTheme.textTheme, AppLightColors.secondary50));
   }
 
   static final lightAppColors =
@@ -20,13 +23,16 @@ class AppTheme {
 
   /// Dark Theme
   static ThemeData get darkTheme {
-    final lightTheme = ThemeData.dark();
-    return lightTheme.copyWith(
+    final darkTheme = ThemeData.dark();
+    return darkTheme.copyWith(
         colorScheme: const ColorScheme.dark(
-            primary: Colors.green, onBackground: Colors.green),
+            primary: Colors.green,
+            onBackground: Colors.green,
+          surface:  Colors.green,
+        ),
         extensions: [darkAppColors],
         textTheme:
-            _buildTextTheme(lightTheme.textTheme, AppLightColors.neutral20));
+            _buildTextTheme(darkTheme.textTheme, AppDarkColors.attention50));
   }
 
   static final darkAppColors =
