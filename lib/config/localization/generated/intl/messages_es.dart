@@ -22,16 +22,19 @@ class MessageLookup extends MessageLookupByLibrary {
 
   static String m0(name) => "Bienvenido ${name}";
 
-  static String m1(gender) =>
+  static String m1(lastName, firstName) =>
+      "Bienvenido ${lastName} ${firstName}";
+
+  static String m2(gender) =>
       "${Intl.gender(gender, female: 'Hola mujer!', male: 'Hola hombre!', other: 'Hola otro!')}";
 
-  static String m2(role) => "${Intl.select(role, {
+  static String m3(role) => "${Intl.select(role, {
             'admin': 'Hola administrado!',
             'manager': 'Hola manager!',
             'other': 'Hola visitante!',
           })}";
 
-  static String m3(howMany) =>
+  static String m4(howMany) =>
       "${Intl.plural(howMany, one: '1 mensaje', other: '${howMany} mensajes')}";
 
   final messages = _notInlinedMessages(_notInlinedMessages);
@@ -39,8 +42,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "pageHomeConfirm":
             MessageLookupByLibrary.simpleMessage("Confirmado Español general"),
         "pageHomeWelcome": m0,
-        "pageHomeWelcomeGender": m1,
-        "pageHomeWelcomeRole": m2,
-        "pageNotificationsCount": m3
+        "pageHomeWelcomeFullName": m1,
+        "pageHomeWelcomeGender": m2,
+        "pageHomeWelcomeRole": m3,
+        "pageNotificationsCount": m4
       };
 }

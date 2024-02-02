@@ -78,7 +78,6 @@ class _MyHomePageState extends State<MyHomePage> {
                  AppLocalizations.current.pageHomeConfirm,
                  style: context.theme.textTheme.displayLarge
             ),
-            Text('$_counter'),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -97,7 +96,14 @@ class _MyHomePageState extends State<MyHomePage> {
                   child: const Text('System'),
                 ),
               ],
-            )
+            ),
+            const SizedBox(height: 10),
+            Text( AppLocalizations.current.pageHomeWelcome("John")),
+            Text( AppLocalizations.current.pageHomeWelcomeRole("other")),
+            Text( AppLocalizations.current.pageNotificationsCount(5)),
+            Text( AppLocalizations.current.pageHomeWelcomeFullName("John", "Doe")),
+            /// otra forma de llamar la internalizacion
+            Text( AppLocalizations.of(context).pageHomeWelcomeGender("female")),
           ],
         ),
       ),

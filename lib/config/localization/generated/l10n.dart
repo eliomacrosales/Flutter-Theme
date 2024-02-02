@@ -70,6 +70,16 @@ class AppLocalizations {
     );
   }
 
+  /// `Bienvenido {lastName} {firstName}`
+  String pageHomeWelcomeFullName(Object lastName, Object firstName) {
+    return Intl.message(
+      'Bienvenido $lastName $firstName',
+      name: 'pageHomeWelcomeFullName',
+      desc: '',
+      args: [lastName, firstName],
+    );
+  }
+
   /// `{gender, select, male {Hola hombre!} female {Hola mujer!} other {Hola otro!}}`
   String pageHomeWelcomeGender(String gender) {
     return Intl.gender(
