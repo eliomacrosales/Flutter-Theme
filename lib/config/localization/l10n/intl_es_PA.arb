@@ -4,5 +4,41 @@
   "pageHomeWelcomeFullName": "Bienvenido {lastName} {firstName}",
   "pageHomeWelcomeGender": "{gender, select, male {Hola hombre!} female {Hola mujer!} other {Hola otro!}}",
   "pageHomeWelcomeRole": "{role, select, admin {Hola administrado!} manager {Hola manager!} other {Hola visitante!}}",
-  "pageNotificationsCount": "{howMany, plural, one{1 mensaje} other{{howMany} mensajes}}"
+  "pageNotificationsCount": "{howMany, plural, one{1 mensaje} other{{howMany} mensajes}}",
+  "commonTotalAmount": "Total: {total}",
+  "@commonTotalAmount": {
+    "placeholders": {
+      "total": {
+        "type": "double",
+        "format": "currency",
+        "optionalParameters": {
+          "symbol": "€",
+          "decimalDigits": 2
+        }
+      }
+    }
+  },
+  "commonCurrentDateTime": "Date: {date} Time: {time}",
+  "@commonCurrentDateTime": {
+    "placeholders": {
+      "date": {
+        "type": "DateTime",
+        "format": "yMd"
+      },
+      "time": {
+        "type": "DateTime",
+        "format": "Hm"
+      }
+    }
+  },
+  "commonCustomDateFormat": "Custom date format: {date}",
+  "@commonCustomDateFormat": {
+    "placeholders": {
+      "date": {
+        "type": "DateTime",
+        "format": "EEE, M/d/y",
+        "isCustomDateFormat": "true"
+      }
+    }
+  }
 }

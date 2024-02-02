@@ -104,6 +104,10 @@ class _MyHomePageState extends State<MyHomePage> {
             Text( AppLocalizations.current.pageHomeWelcomeFullName("John", "Doe")),
             /// otra forma de llamar la internalizacion
             Text( AppLocalizations.of(context).pageHomeWelcomeGender("female")),
+
+            Text( AppLocalizations.current.commonTotalAmount(125750.00)),
+            Text( AppLocalizations.current.commonCurrentDateTime(DateTime.now(), DateTime.now())),
+            Text( AppLocalizations.current.commonCustomDateFormat(DateTime.now())),
           ],
         ),
       ),

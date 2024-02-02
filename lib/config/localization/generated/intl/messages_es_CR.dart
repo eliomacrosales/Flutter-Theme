@@ -20,31 +20,40 @@ typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
 class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'es_CR';
 
-  static String m0(name) => "Bienvenido ${name}";
+  static String m0(date, time) => "Date: ${date} Time: ${time}";
 
-  static String m1(lastName, firstName) =>
+  static String m1(date) => "Custom date format: ${date}";
+
+  static String m2(total) => "Total: ${total}";
+
+  static String m3(name) => "Bienvenido ${name}";
+
+  static String m4(lastName, firstName) =>
       "Bienvenido ${lastName} ${firstName}";
 
-  static String m2(gender) =>
+  static String m5(gender) =>
       "${Intl.gender(gender, female: 'Hola mujer!', male: 'Hola hombre!', other: 'Hola otro!')}";
 
-  static String m3(role) => "${Intl.select(role, {
+  static String m6(role) => "${Intl.select(role, {
             'admin': 'Hola administrado!',
             'manager': 'Hola manager!',
             'other': 'Hola visitante!',
           })}";
 
-  static String m4(howMany) =>
+  static String m7(howMany) =>
       "${Intl.plural(howMany, one: '1 mensaje', other: '${howMany} mensajes')}";
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "commonCurrentDateTime": m0,
+        "commonCustomDateFormat": m1,
+        "commonTotalAmount": m2,
         "pageHomeConfirm":
             MessageLookupByLibrary.simpleMessage("Confirmado Costa Rica"),
-        "pageHomeWelcome": m0,
-        "pageHomeWelcomeFullName": m1,
-        "pageHomeWelcomeGender": m2,
-        "pageHomeWelcomeRole": m3,
-        "pageNotificationsCount": m4
+        "pageHomeWelcome": m3,
+        "pageHomeWelcomeFullName": m4,
+        "pageHomeWelcomeGender": m5,
+        "pageHomeWelcomeRole": m6,
+        "pageNotificationsCount": m7
       };
 }
