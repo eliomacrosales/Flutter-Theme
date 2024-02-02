@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:provider/provider.dart';
+import 'package:theme_extensions/config/localization/generated/l10n.dart';
 import 'package:theme_extensions/config/theme/app_theme_provider.dart';
 import 'package:theme_extensions/config/theme/extensions/app_theme_extension.dart';
 
@@ -20,6 +22,19 @@ class MyApp extends StatelessWidget {
         darkTheme: AppThemeProvider.dark,
         themeMode: context.watch<AppThemeProvider>().themeMode,
         debugShowCheckedModeBanner: false,
+        localizationsDelegates: const [
+
+          GlobalMaterialLocalizations.delegate,
+          GlobalWidgetsLocalizations.delegate,
+          GlobalCupertinoLocalizations.delegate,
+          AppLocalizations.delegate,
+        ],
+       // locale: const Locale('es_ES'),
+      // locale: const Locale('es_CR'),
+       //  locale: const Locale('es_PA'),
+      //  locale: const Locale('en'),
+
+        supportedLocales: AppLocalizations.delegate.supportedLocales,
         home: const MyHomePage(title: 'Flutter Demo Home Page'),
       ),
     );
@@ -60,7 +75,7 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
              Text(
-              'You have pushed the button this many times:',
+                 AppLocalizations.current.pageHomeConfirm,
                  style: context.theme.textTheme.displayLarge
             ),
             Text('$_counter'),

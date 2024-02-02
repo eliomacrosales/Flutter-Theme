@@ -1,0 +1,7 @@
+{
+  "pageHomeConfirm": "Confirmado Costa Rica",
+  "pageHomeWelcome": "Bienvenido {name}",
+  "pageHomeWelcomeGender": "{gender, select, male {Hola hombre!} female {Hola mujer!} other {Hola otro!}}",
+  "pageHomeWelcomeRole": "{role, select, admin {Hola administrado!} manager {Hola manager!} other {Hola visitante!}}",
+  "pageNotificationsCount": "{howMany, plural, one{1 mensaje} other{{howMany} mensajes}}"
+}
